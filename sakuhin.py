@@ -1,24 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import os
 import json
 import itertools
 
-
-# In[3]:
-
-
+#独占】【準新作】ヌードモデルNTR 上司と羞恥に溺れた妻の衝撃的浮気映像 篠田ゆう
 url = "https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=jul00959/"
-
-
-# In[4]:
-
 
 res = requests.get(url)
 soup = BeautifulSoup(res.text, 'html.parser')
@@ -26,39 +16,9 @@ firstpage_url = soup.find('a', class_="ageCheck__link ageCheck__link--r18").get(
 res2 = requests.get(firstpage_url)
 soup2 = BeautifulSoup(res2.text, 'html.parser')
 
-
-# In[5]:
-
-
 json_2 = soup2.find("script", {"type": "application/ld+json"})
 
-
-# In[6]:
-
-
-print(type(json_2))
-
-
-# In[7]:
-
-
 data = json_2.text
-
-
-# In[8]:
-
-
-data
-
-
-# In[9]:
-
-
-print(type(data))
-
-
-# In[10]:
-
 
 json_dict = None
 if "subjectOf" in data and "contentUrl" in data:
@@ -75,21 +35,9 @@ if "subjectOf" in data and "contentUrl" in data:
     print()
     print(video_url)
 
-
-# In[18]:
-
-
 (json_dict['subjectOf']['contentUrl']).replace('sm', 'mhb')
 
-
-# In[24]:
-
-
-json_dict['description']
-
-
-# In[21]:
-
+#json_dict['description']
 
 def get_move(url):
     json_dict = None
@@ -119,16 +67,3 @@ def get_move(url):
             start_time = time.process_time()
             with open('/home/fed36-mb400/ビデオ/Fanza/熟女ページ１/' + move_title + '.mp4', 'wb') as saveFile:
                 saveFile.write(response.content)
-
-
-# In[1]:
-
-
-soup2
-
-
-# In[ ]:
-
-
-
-
