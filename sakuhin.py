@@ -22,22 +22,32 @@ data = json_2.text
 
 json_dict = None
 if "subjectOf" in data and "contentUrl" in data:
-    json_dict = json.loads(data)
-    #print(json_dict)
-    actor_name = json_dict['subjectOf']['actor']['name']
-    video_title = json_dict['name']
-    description = json_dict['description']
-    video_url = (json_dict['subjectOf']['contentUrl']).replace('sm', 'mhb')
-    print(actor_name)
-    print(video_title)
-    print()
-    print(description)
-    print()
-    print(video_url)
+	json_dict = json.loads(data)
+	#print(json_dict)
+	actor_name = json_dict['subjectOf']['actor']['name']
+	video_title = json_dict['name']
+	description = json_dict['description']
+	video_url = (json_dict['subjectOf']['contentUrl']).replace('sm', 'mhb')
+	print(actor_name)
+	print(video_title)
+	print()
+	print(description)
+	print()
+	print(video_url)
+if len(video_title) > 50:
+	#タイトルの先頭から３５文字に＊＊＊＊をつなげてタイトル末尾１５文字を連結してファイル名を作成。
+	video_title = video_title[:35] + '＊＊＊＊' + video_title[-15:]
+	#動画タイトルの中に「/」スラッシュが入っていると、動画保存するパスが変わってしまうので置換処理。
+	video_title = video_title.replace('/', '_')
+	response = requests.get(video_url)
+	if response.status_code == 200:
+		#start_time = time.process_time()
+		with open('C:\Users\dell1\' + move_title + '.mp4', 'wb') as saveFile
+		#with open('/home/fed36-mb400/ビデオ/Fanza/篠田ゆう' + move_title + '.mp4', 'wb') as saveFile:
+			saveFile.write(response.content)
 
-(json_dict['subjectOf']['contentUrl']).replace('sm', 'mhb')
 
-#json_dict['description']
+
 
 def get_move(url):
     json_dict = None
