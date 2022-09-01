@@ -42,7 +42,7 @@ if len(video_title) > 50:
 	response = requests.get(video_url)
 	if response.status_code == 200:
 		#start_time = time.process_time()
-		with open('C:\Users\dell1\' + move_title + '.mp4', 'wb') as saveFile
+		with open('/home/fed36-mb400/git/mb400/' + video_title + '.mp4', 'wb') as saveFile:
 		#with open('/home/fed36-mb400/ビデオ/Fanza/篠田ゆう' + move_title + '.mp4', 'wb') as saveFile:
 			saveFile.write(response.content)
 
@@ -75,5 +75,5 @@ def get_move(url):
         response = requests.get(move_url)
         if response.status_code == 200:
             start_time = time.process_time()
-            with open('/home/fed36-mb400/ビデオ/Fanza/熟女ページ１/' + move_title + '.mp4', 'wb') as saveFile:
+            with open('/home/fed36-mb400/git/mb400/' + move_title + '.mp4', 'wb') as saveFile:
                 saveFile.write(response.content)
