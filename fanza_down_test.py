@@ -69,7 +69,7 @@ def get_move(url):
         response = requests.get(move_url)
         if response.status_code == 200:
             start_time = time.process_time()
-            with open('/home/fed36-mb400/git/mb400/video/' + move_title + '.mp4', 'wb') as saveFile:
+            with open('C:\\Users\\i3-12100\\git\\' + move_title + '.mp4', 'wb') as saveFile:
                 saveFile.write(response.content)
  
 def start_down(videos_url):
