@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
 
 from bs4 import BeautifulSoup
 import itertools
@@ -19,10 +17,13 @@ res2 = requests.get(age_check_url)
 
 soup2 = BeautifulSoup(res2.text, 'html.parser')
 
-json = soup2.find("script", {"type": "application/ld+json"})
+json_2 = soup2.find("script", {"type": "application/ld+json"})
 
-data = json.text
+data = json_2.text
+#print(data)
 
-json_dict = json.loads(data)
+jd = json.loads(data)
 
+#print(jd['name'])
+print(jd)
 
