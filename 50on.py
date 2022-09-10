@@ -10,3 +10,5 @@ def keyword():
                 #print("あたりです")
                 gojyuon.append(row + _)
     return gojyuon
+
+goj = keyword()

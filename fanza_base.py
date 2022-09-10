@@ -25,7 +25,7 @@ def base():
     return soup2
 
 soup2 = base()
-print(soup2.find_all('a'))
+#print(soup2.find_all('a'))
 
 def sakuhin():
     json_2 = soup2.find("script", {"type": "application/ld+json"})
@@ -41,9 +41,12 @@ def sakuhin():
         description = json_dict['description']
         video_url = (json_dict['subjectOf']['contentUrl']).replace('sm', 'mhb')
         print(actor_name)
+        print()
         print(video_title)
         print(description)
         print(video_url)
+sakuhin()
+
 
 def actress():
     pass
