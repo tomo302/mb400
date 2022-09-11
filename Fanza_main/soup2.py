@@ -32,7 +32,7 @@ def page_kind(soup2):
 		pk = "50on"
 	return pk
 
-
+#この最大ページ数取得はページによっては使えない！！
 def get_maxPage(soup2):
 	max_page = soup2.find_all('li', class_ = 'terminal')
 	max_page = int(str(max_page[1]).split('/')[-4].split('=')[1])

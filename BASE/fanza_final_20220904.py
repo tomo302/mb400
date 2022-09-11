@@ -83,7 +83,7 @@ g_lists, act_list, genru_name = genru(url)
 # In[104]:
 
 
-#act_listはカラムのリストでg_listsは3カラムの2次元配列で、3カラムの先頭にacr_listを追加して4カラムの2次元配列を作成するコード
+#act_listは1カラムのリストでg_listsは3カラムの2次元配列で、3カラムの先頭にacr_listを追加して4カラムの2次元配列を作成するコード
 #list構造でカラム追記はinsertを使用するらしい
 i = 0
 for _ in act_list:
@@ -245,6 +245,7 @@ def get_sakuhin_data():
             sample_gazou.append(_['src'])
         
     #取得してリターンする値：：作品タイトル、作品内容詳細、作品内画像URL、DVDジャケット見開き画像URL、サンプル動画URL、出演者名、作品サンプル画像
+    sakuhin_list = []
     sakuhin_list = [json_dict['name'], json_dict['description'], json_dict['image'], dvd_jacket_url, json_dict['subjectOf']['contentUrl'].replace('sm', 'mhb'), actor_name, sample_gazou] 
     
     #return sakuhin_name, sakuhin_description, sakuhin_image, sample_video_url
