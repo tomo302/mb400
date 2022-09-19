@@ -1,4 +1,32 @@
 ■ ジャンルページ
+女優名
+for row in  soup2.find_all('p', class_ = 'sublink'):
+    print(row.span.text)
+#
+----
+----
+藤井いよな
+藤田こずえ
+天川そら
+----
+----
+山岸逢花
+三浦成美
+向井藍
+末広純
+ひなたまりん
+つばさ舞
+倉本すみれ
+楓カレン
+神木麗
+椿りか
+美谷朱里
+深田結梨
+----
+山手梨愛
+小島みなみ
+
+
 genre.find_all('p', class_ = "tmb")[1]
 
 <p class="tmb">
@@ -39,3 +67,29 @@ for row in actor_data.select('li a'):
 <a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1056059/"><img alt="藍色なぎ" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/aiiro_nagi.jpg" width="100"/><br/>藍色なぎ<br/><span>あいいろなぎ</span><span>出演作品：55</span></a>
 <a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1047550/"><img alt="藍色りりか" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/aiiro_ririka.jpg" width="100"/><br/>藍色りりか<br/><span>あいいろりりか</span><span>出演作品：25</span></a>
 <a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1075314/"><img alt="愛上みお" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/aiue_mio.jpg" width="100"/><br/>愛上みお<br/><span>あいうえみお</span><span>出演作品：8</span></a>
+
+■　出演作品一覧ページ
+
+
+soup2.find_all('p', 'tmb')
+
+[<p class="tmb">
+ <a data-i3dmmref="actress_1008785" data-i3ref="list" data-listorder="1" href="https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=vrkm00331/" onmousedown="var p=[];p.push('dmmref='+this.dataset.i3dmmref);p.push('i3_ref='+this.dataset.i3ref);p.push('i3_ord='+this.dataset.listorder);this.href+='?'+p.join('&amp;');this.onmousedown='function(){};'">
+ <span class="img"><img alt="【VR】男を虜にする最上級痴女 激売れ30タイトル厳選BEST" src="https://pics.dmm.co.jp/digital/video/vrkm00331/vrkm00331ps.jpg"/></span>
+ <span class="txt">【VR】男を虜にする最上級痴女 激売れ30タイトル厳選BEST</span>
+ <!--/tmb--></a></p>,
+ <p class="tmb">
+ <a data-i3dmmref="actress_1008785" data-i3ref="list" data-listorder="2" href="https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=dvdms00828/" onmousedown="var p=[];p.push('dmmref='+this.dataset.i3dmmref);p.push('i3_ref='+this.dataset.i3ref);p.push('i3_ord='+this.dataset.listorder);this.href+='?'+p.join('&amp;');this.onmousedown='function(){};'">
+ <span class="img"><img alt="色白デカ尻の家事代行おばさんに即ハメ！デカチンの虜になった人妻が翌日勝手に押しかけてきたので満足するまで何度も中出ししてあげた1st BEST 人妻6名収録！！ 2枚組10時間！！" src="https://pics.dmm.co.jp/digital/video/dvdms00828/dvdms00828ps.jpg"/></span>
+ <span class="txt">色白デカ尻の家事代行おばさんに即ハメ！デカチンの虜になった人妻が翌日勝手に押しかけてきたので満足するまで何度も中出ししてあげた1st BEST 人妻6名収録！！ 2枚組10時間！！</span>
+ <!--/tmb--></a></p>,
+ <p class="tmb">
+ <a data-i3dmmref="actress_1008785" data-i3ref="list" data-listorder="3" href="https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=jusd00943/" onmousedown="var p=[];p.push('dmmref='+this.dataset.i3dmmref);p.push('i3_ref='+this.dataset.i3ref);p.push('i3_ord='+this.dataset.listorder);this.href+='?'+p.join('&amp;');this.onmousedown='function(){};'">
+ <span class="img"><img alt="「ダメっ…中だけは絶対出しちゃダメぇぇぇぇ！！」望まない中出しSEXの快感に抗えず絶頂を繰り返す人妻 49連発 12時間" src="https://pics.dmm.co.jp/digital/video/jusd00943/jusd00943ps.jpg"/></span>
+ <span class="txt">「ダメっ…中だけは絶対出しちゃダメぇぇぇぇ！！」望まない中出しSEXの快感に抗えず絶頂を繰り返す人妻 49連発 12時間</span>
+ <!--/tmb--></a></p>,
+ <p class="tmb">
+ <a data-i3dmmref="actress_1008785" data-i3ref="list" data-listorder="4" href="https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=jul00709/" onmousedown="var p=[];p.push('dmmref='+this.dataset.i3dmmref);p.push('i3_ref='+this.dataset.i3ref);p.push('i3_ord='+this.dataset.listorder);this.href+='?'+p.join('&amp;');this.onmousedown='function(){};'">
+ <span class="img"><img alt="僕を女手一つで育ててくれた、最愛の義母が最低な友人に寝取られて… 篠田ゆう" src="https://pics.dmm.co.jp/digital/video/jul00709/jul00709ps.jpg"/></span>
+ <span class="txt">僕を女手一つで育ててくれた、最愛の義母が最低な友人に寝取られて… 篠田ゆう</span>
+ <!--/tmb--></a></p>,
