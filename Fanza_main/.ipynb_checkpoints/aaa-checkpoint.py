@@ -48,4 +48,4 @@ page_kind = str(page_kind(soup2))
 
 print("このページは：" + page_kind + "です")
 
-max_page, make_pageNationUrlList(max_page, page_kind)
+make_pageNationUrlList(max_page, page_kind)

@@ -1,7 +1,5 @@
+#このコードはFANZAのページの種類を取得するコード
 
-#このコードは使用禁止！！例）ページ数が１の場合、'li', class_ = 'terminal'は存在しないためエラーでる！！
-
-#urlから判定させる
 def page_kind(soup2):
 
 	pk = str(soup2.find_all('li', class_ = 'terminal')[1]).split('/')[6]
