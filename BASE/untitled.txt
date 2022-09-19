@@ -1,0 +1,41 @@
+■ ジャンルページ
+genre.find_all('p', class_ = "tmb")[1]
+
+<p class="tmb">
+<a data-i3dmmref="keyword_1001" data-i3ref="list" data-listorder="2" href="https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=wavr00223/" onmousedown="var p=[];p.push('dmmref='+this.dataset.i3dmmref);p.push('i3_ref='+this.dataset.i3ref);p.push('i3_ord='+this.dataset.listorder);this.href+='?'+p.join('&amp;');this.onmousedown='function(){};'">
+<span class="img"><img alt="【VR】酔った勢いで行き遅れ女上司BBAとSEXしてしまったボク。 あの日からというもの超絶名器マ○コが忘れられず…再びBBAをホテルに呼び出して人生で最高に気持ちいい中出しVR" src="https://pics.dmm.co.jp/digital/video/wavr00223/wavr00223ps.jpg"/></span>
+<span class="txt">【VR】酔った勢いで行き遅れ女上司BBAとSEXしてしまったボク。 あの日からというもの超絶名器マ○コが忘れられず…再びBBAをホテルに呼び出して人生で最高に気持ちいい中出しVR</span>
+<!--/tmb--></a></p>
+
+取得可能値
+作品URL
+作品タイトル
+DVDジャケット表画像URL
+ーーーーーーーーーーーーーーーーーー
+ジャンル名取得は以下
+
+sakujyo_title_word = " - エロ動画・アダルトビデオ - FANZA動画"
+genre.title.text.replace(sakujyo_title_word, '')
+#OL
+
+■ Actorページ
+2段階でタグを取得する
+１段目ULタグ
+２段目 li>a
+
+取得可能値
+出演作品一覧ページURL　row.['href']
+女優名               row.img['alt']
+女優画像（小）URL      row.img['src']
+フリガナ　　　　　　　 row.span
+出演数               row.span.next_siblig.
+
+actor_data = actor.find("ul", class_ = "d-item act-box-100 group")
+for row in actor_data.select('li a'):
+    print(row)
+#
+<a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1037568/"><img alt="Ai" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/ai.jpg" width="100"/><br/>Ai<br/><span>あい</span><span>出演作品：13</span></a>
+<a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=25929/"><img alt="愛あいり" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/ai_airi.jpg" width="100"/><br/>愛あいり<br/><span>あいあいり</span><span>出演作品：255</span></a>
+<a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1056059/"><img alt="藍色なぎ" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/aiiro_nagi.jpg" width="100"/><br/>藍色なぎ<br/><span>あいいろなぎ</span><span>出演作品：55</span></a>
+<a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1047550/"><img alt="藍色りりか" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/aiiro_ririka.jpg" width="100"/><br/>藍色りりか<br/><span>あいいろりりか</span><span>出演作品：25</span></a>
+<a href="https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1075314/"><img alt="愛上みお" height="100" src="https://pics.dmm.co.jp/mono/actjpgs/medium/aiue_mio.jpg" width="100"/><br/>愛上みお<br/><span>あいうえみお</span><span>出演作品：8</span></a>

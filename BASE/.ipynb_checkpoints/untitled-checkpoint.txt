@@ -1,0 +1,22 @@
+■ ジャンルページ
+genre.find_all('p', class_ = "tmb")[1]
+
+<p class="tmb">
+<a data-i3dmmref="keyword_1001" data-i3ref="list" data-listorder="2" href="https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=wavr00223/" onmousedown="var p=[];p.push('dmmref='+this.dataset.i3dmmref);p.push('i3_ref='+this.dataset.i3ref);p.push('i3_ord='+this.dataset.listorder);this.href+='?'+p.join('&amp;');this.onmousedown='function(){};'">
+<span class="img"><img alt="【VR】酔った勢いで行き遅れ女上司BBAとSEXしてしまったボク。 あの日からというもの超絶名器マ○コが忘れられず…再びBBAをホテルに呼び出して人生で最高に気持ちいい中出しVR" src="https://pics.dmm.co.jp/digital/video/wavr00223/wavr00223ps.jpg"/></span>
+<span class="txt">【VR】酔った勢いで行き遅れ女上司BBAとSEXしてしまったボク。 あの日からというもの超絶名器マ○コが忘れられず…再びBBAをホテルに呼び出して人生で最高に気持ちいい中出しVR</span>
+<!--/tmb--></a></p>
+
+取得可能値
+作品URL
+作品タイトル
+DVDジャケット表画像URL
+ーーーーーーーーーーーーーーーーーー
+ジャンル名取得は以下
+
+sakujyo_title_word = " - エロ動画・アダルトビデオ - FANZA動画"
+genre.title.text.replace(sakujyo_title_word, '')
+#OL
+
+■ Actorページ
+actor.find("ul", class_ = "d-item act-box-100 group")
