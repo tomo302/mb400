@@ -7,7 +7,7 @@ import sys
 import pickle
 
 
-url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=ta/"
+url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=ki/"
 
 data = None
 

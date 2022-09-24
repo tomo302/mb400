@@ -4,7 +4,6 @@ import os
 import glob
 import pickle
 import sys
-
 #from pickle_save import soup2
 sys.setrecursionlimit(20000)
 dir_path = "C:/Users/i3-12100/git/mb400/*pickle" ##ワイルドカードを設定「*txt」
