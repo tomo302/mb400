@@ -6,7 +6,7 @@ import pickle
 import sys
 #from pickle_save import soup2
 sys.setrecursionlimit(20000)
-dir_path = "C:/Users/i3-12100/git/mb400/*.pickle" ##ワイルドカードを設定「*txt」
+dir_path = "C:/Users/i3-12100/git/mb400/*.mp4" ##ワイルドカードを設定「*txt」
 txt_files = glob.glob(dir_path)
 #txt_files = txt_files
 

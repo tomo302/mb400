@@ -7,7 +7,7 @@ import sys
 import pickle
 
 
-url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=ma/"
+url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=sa/"
 
 data = None
 
@@ -22,13 +22,16 @@ soup2 = BeautifulSoup(res2.content, 'html.parser')
 replace_word = " - エロ動画・アダルトビデオ - FANZA動画"
 
 
-data = soup2.prettify()
+#data = soup2.prettify()
+
+
+
 #print(data)
 page_title = soup2.title.text.replace(replace_word, '')
 print(page_title)
 
-#with open("./" + page_title + ".pickle", "wb") as f:
-    #pickle.dump(data, f)
+with open("./" + page_title + ".pickle", "wb") as f:
+    pickle.dump(soup2, f)
 
-#print(sys.getrecursionlimit())
+print(sys.getrecursionlimit())
 
