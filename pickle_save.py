@@ -7,7 +7,12 @@ import sys
 import pickle
 
 
+<<<<<<< HEAD
 url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=ki/"
+=======
+url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=sa/"
+url1 = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=sa/"
+>>>>>>> 095c58079e6498b8621db53d8b9794d0470e4ba1
 
 data = None
 
