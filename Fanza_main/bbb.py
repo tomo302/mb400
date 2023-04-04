@@ -57,17 +57,17 @@ page_title = soup2.title
 #print(page_title)
 print(url)
 if "d/i" in url:
-	print("ジャンルページです")
-	#ジャンルページ用の関数を実行
+    print("ジャンルページです")
+    #ジャンルページ用の関数を実行
 elif "a/-/a" in url:
-	print("５０音ページです")
-	#５０音ページ用の関数を実行
+    print("５０音ページです")
+    #５０音ページ用の関数を実行
 elif "t&" in url:
-	print("ビデオページです")
-	#ビデオページ用の関数を実行
+    print("ビデオページです")
+    #ビデオページ用の関数を実行
 elif "s/i" in url:
-	print("出演一覧ページ")
-	#出演一覧ページ用の関数を実行
+    print("出演一覧ページ")
+    #出演一覧ページ用の関数を実行
 print(soup2.title)
 
 

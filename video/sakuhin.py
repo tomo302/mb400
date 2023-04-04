@@ -50,30 +50,30 @@ if len(video_title) > 50:
 
 
 def get_move(url):
-    json_dict = None
-    res3 = requests.get(url)
-    soup3 = BeautifulSoup(res3.text, 'html.parser')
-    url3 = soup3.find('a', class_ ="ageCheck__link ageCheck__link--r18")['href']
-    res4 = requests.get(url3)
-    
-    soup4 = BeautifulSoup(res4.text, 'html.parser')
-    json_2= soup4.find("script", {"type": "application/ld+json"})
-    data = json_2.text
-    #サンプル動画が存在しないと['subjectOf']キーが無いってエラーが出るのでサンプル動画があったら処理をする。
-    if "subjectOf" in data and "contentUrl" in data:
-        json_dict = json.loads(data)
-        print(json_dict)
-    
-        move_url = (json_dict['subjectOf']['contentUrl']).replace('sm', 'mhb')
-        move_title = (json_dict['name'])
-        #動画タイトル名をファイル名に使用するので長すぎるとエラーになるので５０文字以上なら短く加工する処理
-        if len(move_title) > 50:
-            #タイトルの先頭から３５文字に＊＊＊＊をつなげてタイトル末尾１５文字を連結してファイル名を作成。
-            move_title = move_title[:35] + '＊＊＊＊' + move_title[-15:]
-        #動画タイトルの中に「/」スラッシュが入っていると、動画保存するパスが変わってしまうので置換処理。
-        move_title = move_title.replace('/', '_')
-        response = requests.get(move_url)
-        if response.status_code == 200:
-            start_time = time.process_time()
-            with open('/home/fed36-mb400/git/mb400/' + move_title + '.mp4', 'wb') as saveFile:
-                saveFile.write(response.content)
+	json_dict = None
+	res3 = requests.get(url)
+	soup3 = BeautifulSoup(res3.text, 'html.parser')
+	url3 = soup3.find('a', class_ ="ageCheck__link ageCheck__link--r18")['href']
+	res4 = requests.get(url3)
+	
+	soup4 = BeautifulSoup(res4.text, 'html.parser')
+	json_2= soup4.find("script", {"type": "application/ld+json"})
+	data = json_2.text
+	#サンプル動画が存在しないと['subjectOf']キーが無いってエラーが出るのでサンプル動画があったら処理をする。
+	if "subjectOf" in data and "contentUrl" in data:
+		json_dict = json.loads(data)
+		print(json_dict)
+	
+		move_url = (json_dict['subjectOf']['contentUrl']).replace('sm', 'mhb')
+		move_title = (json_dict['name'])
+		#動画タイトル名をファイル名に使用するので長すぎるとエラーになるので５０文字以上なら短く加工する処理
+		if len(move_title) > 50:
+			#タイトルの先頭から３５文字に＊＊＊＊をつなげてタイトル末尾１５文字を連結してファイル名を作成。
+			move_title = move_title[:35] + '＊＊＊＊' + move_title[-15:]
+		#動画タイトルの中に「/」スラッシュが入っていると、動画保存するパスが変わってしまうので置換処理。
+		move_title = move_title.replace('/', '_')
+		response = requests.get(move_url)
+		if response.status_code == 200:
+			start_time = time.process_time()
+			with open('/home/fed36-mb400/git/mb400/' + move_title + '.mp4', 'wb') as saveFile:
+				saveFile.write(response.content)

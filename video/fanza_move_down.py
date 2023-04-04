@@ -5,8 +5,8 @@ import re
 import json
 import time
 #これ以降のコードは１本のビデオのURLでダウンロードするコード。
-url2 = 'https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=ssni00299/?dmmref=recommend6_detail&i3_ref=recommend&i3_ord=7'#一つのアドレスで動画ダウンロードテスト
-
+#url2 = 'https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=ssni00299/?dmmref=recommend6_detail&i3_ref=recommend&i3_ord=12'#一つのアドレスで動画ダウンロードテスト
+url2 = "https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=1stars00668/?dmmref=keyword_6965&i3_ref=list&i3_ord=3"
 res3 = requests.get(url2)
 
 soup3 = BeautifulSoup(res3.text, 'html.parser')
@@ -53,7 +53,12 @@ start_time = time.process_time()
 response = requests.get(move_url)
 #サンプル動画に大きいサイズのURLが存在した場合ダウンロードする
 if response.status_code == 200:
-    with open('/home/fed36-mb400/git/mb400/video/' + move_title + '.mp4', 'wb') as saveFile:
+    with open('/Users/i3-12100/git/mb400/video/' + move_title + '.mp4', 'wb') as saveFile:
+        saveFile.write(response.content)
+else:
+    move_url = (json_dict['subjectOf']['contentUrl']).replace('sm', 'dmb')
+    response = requests.get(move_url)
+    with open('/Users/i3-12100/git/mb400/video/' + move_title + '.mp4', 'wb') as saveFile:
         saveFile.write(response.content)
 
     # ダミー処理
@@ -66,5 +71,4 @@ if response.status_code == 200:
     elapsed_time = end_time - start_time
     print(elapsed_time)
     print("終了しました")
-else:
     print("ステータスコード：　" + str(response.status_code))

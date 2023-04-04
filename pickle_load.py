@@ -14,9 +14,9 @@ txt_files = glob.glob(dir_path)
 print(txt_files)
 #full_size = 0
 
-#	
-
-	#x = pickle.load(f)
-	#print(x)
-	#print(x.find_all('a'))
+#   
+with open(txt_files, "rb") as f:
+    x = pickle.load(f)
+print(x)
+print(x.find_all('a'))
 print("aaaaaa")
