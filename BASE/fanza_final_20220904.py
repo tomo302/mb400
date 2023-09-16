@@ -71,13 +71,13 @@ def genru(url):
             dvd_jaketo_omote = row.img['src']
         
             genru_lists.append([sakuhin_title, sakuhin_url, dvd_jaketo_omote])
-    return genru_lists, actor_lists, genru_name
+    return genru_lists, actor_lists, genru_name, g_soup
 
 
 # In[103]:
 
 
-g_lists, act_list, genru_name = genru(url)
+g_soup, g_lists, act_list, genru_name = genru(url)
 
 
 # In[104]:

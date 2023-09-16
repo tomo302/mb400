@@ -7,6 +7,7 @@ import requests
 import re
 import json
 import time
+import platform
 #url = "https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1053615/sort=date/?dmmref=arm00929&i3_ref=detail&i3_ord=1&i3_pst=info_actress"
 #ジャンルのURL
 url = "https://www.dmm.co.jp/digital/videoa/-/list/=/article=keyword/id=4124/"
@@ -61,8 +62,13 @@ def get_move(url):
         response = requests.get(move_url)
         if response.status_code == 200:
             start_time = time.process_time()
-            with open('/home/fed36-mb400/git/mb400/' + move_title + '.mp4', 'wb') as saveFile:
-                saveFile.write(response.content)
+            if "Window" in platform.platform():
+                save_path = "C:\\FANZA_DOWN\\" + move_title + ".mp4"
+
+
+                with open(save_path, 'wb') as saveFile:
+            #with open('/home/fed36-mb400/git/mb400/' + move_title + '.mp4', 'wb') as saveFile:
+                    saveFile.write(response.content)
  
 def start_down(videos_url):
     # 開始 sleep時間をカウントしない処理時間

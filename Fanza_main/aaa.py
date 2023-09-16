@@ -12,9 +12,9 @@ from soup2 import soup2, page_kind, get_maxPage, make_pageNationUrlList
 
 
 # 使用するURLを指定
-#url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=si/"
+url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=si/"
 #url = "https://www.dmm.co.jp/digital/videoa/-/list/=/article=keyword/id=1001/"
-url = "https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1008785/" #篠田ゆう
+#url = "https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1008785/" #篠田ゆう
 
 
 soup2 = soup2(url)

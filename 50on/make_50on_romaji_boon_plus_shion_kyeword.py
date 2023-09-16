@@ -12,3 +12,4 @@ def keyword():
     return gojyuon
 
 goj = keyword()
+print(goj)
