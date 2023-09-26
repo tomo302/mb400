@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[15]:
-
 
 import requests
 from bs4 import BeautifulSoup
@@ -54,14 +52,5 @@ def genre_name_list():
     return genre_url
 
 
-# In[16]:
-
-
 gu = genre_name_list()
-
-
-# In[ ]:
-
-
-
 

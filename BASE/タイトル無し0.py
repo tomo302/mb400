@@ -23,13 +23,13 @@ def soup2(url):
     return soup2
 
 def actress(url):
-	pass
+    pass
 
 def genru(url):
-	pass
+    pass
 
 def sakuhin_list(url):
-	pass
+    pass
 
 def video_page(url):
     print("部でおです")
@@ -67,19 +67,19 @@ def video_page(url):
 #重要・URLを判定してページに合った関数を実行させる役割のurl_check(url)関数。
 def url_check(url):
     if "d/i" in url:
-	    print("ジャンルページです")
-	    #ジャンルページ用の関数を実行
+        print("ジャンルページです")
+        #ジャンルページ用の関数を実行
     elif "a/-/a" in url:
-	    print("５０音ページです")
-	    #５０音ページ用の関数を実行
+        print("５０音ページです")
+        #５０音ページ用の関数を実行
     elif "t&" in url:
         print("ビデオページです")
-	    #ビデオページ用の関数を実行
+        #ビデオページ用の関数を実行
         video_page(url)
         
     elif "s/i" in url:
-	    print("出演一覧ページ")
-	    #出演一覧ページ用の関数を実行
+        print("出演一覧ページ")
+        #出演一覧ページ用の関数を実行
 url_check(url)
 
 soup2 = (soup2(url))
@@ -87,4 +87,4 @@ soup2 = (soup2(url))
 
 
 
-	
+    
