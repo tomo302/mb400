@@ -32,7 +32,8 @@ def sakuhin_list(url):
     pass
 
 def video_page(url):
-    print("部でおです")
+    print("ビデオです")
+    soup2 = soup2(url)
     
     # 作品名取得
     print(soup2(url).find('h1',  class_ = "item fn").text)
@@ -74,15 +75,28 @@ def url_check(url):
         #５０音ページ用の関数を実行
     elif "t&" in url:
         print("ビデオページです")
+<<<<<<< HEAD
         #ビデオページ用の関数を実行
         video_page(url)
         
     elif "s/i" in url:
         print("出演一覧ページ")
         #出演一覧ページ用の関数を実行
+=======
+	    #ビデオページ用の関数を実行
+
+        video_page(url)
+        
+    elif "s/i" in url:
+	    print("出演一覧ページ")
+	    #出演一覧ページ用の関数を実行
+
+
+
+>>>>>>> f112d7e4cf491859cd2d23d99587453ad3da4fd2
 url_check(url)
 
-soup2 = (soup2(url))
+
 
 
 

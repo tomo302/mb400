@@ -16,8 +16,12 @@ import itertools
 #rl = "https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=jul00959/"
 
 def base():
-    url = "https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=jul00959/"
+    url = "https://www.dmm.co.jp/digital/videoa/-/genre/"
     res = requests.get(url) 
+
+    #content_type_encoding = r.encoding if r.encoding != 'ISO-8859-1' else None
+    #soup = BeautifulSoup(r.content, 'html.parser', from_encoding=content_type_encoding)
+
     soup = BeautifulSoup(res.text, 'html.parser')
     firstpage_url = soup.find('a', class_="ageCheck__link ageCheck__link--r18").get('href')
     res2 = requests.get(firstpage_url)
@@ -45,7 +49,7 @@ def sakuhin():
         print(video_title)
         print(description)
         print(video_url)
-sakuhin()
+#sakuhin()
 
 
 def actress():
@@ -57,7 +61,16 @@ def genru():
 def itiran():
     pass
 
+"""
+<div data-v-02cb2b3f="" id="list2" class="seo-genre-box">
 
+"""
 
+print(soup2.title.text)
+#print(soup2.find("div",  id="genre_list_box"))
+jd = soup2.find("div", id="genre_list_box").find_all("div", class_="seo-genre")
 
+#print(soup2.find_all("div", class_="seo-genre-box"))
 
+#div_tag = jd.find('div', {'data-v-02cb2b3f': True})
+print(jd)
