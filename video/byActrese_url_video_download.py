@@ -67,6 +67,9 @@ def get_move(url):
 
 
                 with open(save_path, 'wb') as saveFile:
+            elif:
+                "Ubuntu" in platform.platform():
+                
             #with open('/home/fed36-mb400/git/mb400/' + move_title + '.mp4', 'wb') as saveFile:
                     saveFile.write(response.content)
  
