@@ -1,0 +1,86 @@
+# -*- coding: utf-8 -*-
+
+
+import os
+import requests
+from bs4 import BeautifulSoup
+import re
+import csv
+import numpy as np
+import operator
+
+
+# 出演作品一覧ページURL
+url = "https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1034956/" 
+
+# 前ページURL組立時に使用するベースとなるURLフォーマット
+base_url = "https://www.dmm.co.jp/digital/videoa/-/list/=/article=actress/id=1034956/page="
+
+
+
+
+# step1の元
+def soup2(url):
+    res = requests.get(url)
+    soup = BeautifulSoup(res.text, 'html.parser')
+    
+    age_check_url = soup.find('a', class_ ="ageCheck__link ageCheck__link--r18")['href']
+    
+    res2 = requests.get(age_check_url)
+    
+    soup2 = BeautifulSoup(res2.text, 'html.parser')
+    
+    return soup2
+
+soup9 = soup2(url)
+actor_name = soup9.find('span', itemprop="name")
+
+print(soup9.title.text)
+# step2の元
+# 完成 ページネーション分のURLを作成する
+# ここは改造予定20221015現在、URLを判定して
+def make_url(soup9, base_url):
+    #　ここからデータ加工スタート
+    title_num = int(soup9.find('div',  class_ = "list-boxcaptside list-boxpagenation").p.text.replace('　', '').split('タ')[0])
+    max_page = -(-title_num // 120) + 1
+    url_lists = []
+    for page in range(1, max_page):
+        url_lists.append(base_url + str(page))
+    return url_lists, title_num
+
+url_lists, title_num = make_url(soup9, base_url)
+
+str(title_num)
+print(type(title_num))
+
+
+def fanza(url_lists):
+    datas = []
+    base_ajax_url = "https://www.dmm.co.jp/digital/videoa/-/list/ajax-sample-frame/=/cid="
+    for url in url_lists:
+        data = soup2(url)
+        for row in data.find_all('p', class_ = 'tmb'):
+            
+            
+            title = row.img['alt']
+            actor_jpg = row.img['src']
+            sakuhin_url = row.a['href']
+            # ajax_URL作成
+            cid = sakuhin_url.split('cid=')[1].replace('/', '')
+            ajax_url = base_ajax_url + cid
+               
+            data = [title, actor_jpg, sakuhin_url, ajax_url]
+            datas.append(data)
+    print(datas)
+    return datas
+
+s_data = fanza(url_lists)
+        
+def make_csv(s_data, title_num):
+    title_num = str(title_num)
+    file_name = actor_name + '_.csv'
+    with open(file_name + title_num, 'w') as file:
+        writer = csv.writer(file, lineterminator='\n')
+        writer.writerows(s_data)
+        
+make_csv(s_data, title_num)

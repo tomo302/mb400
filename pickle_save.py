@@ -9,7 +9,7 @@ import pickle
 
 
 #url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=ki"
-url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=ta/"
+url = "https://www.dmm.co.jp/digital/videoa/-/actress/=/keyword=i/"
 
 
 data = None
